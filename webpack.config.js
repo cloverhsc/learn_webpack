@@ -2,13 +2,20 @@ const path = require('path')    // nodejs core module
 var webpack = require('webpack')
 
 module.exports = {
+  devServer: {
+    contentBase: path.join(__dirname, '/'),
+    compress: true,
+    port: 9000,
+    inline: true
+  },
 	entry: {
     app: ["./app/index.js"],
-    vendor: ["./vendors/jquery-3.2.1.min.js"]
+    vendor: ["jquery"]
   },
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'bundle.js'
+		filename: 'bundle.js',
+    publicPath: '/dist/',
 	},
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
