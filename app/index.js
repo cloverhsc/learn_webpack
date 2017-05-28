@@ -15,5 +15,5 @@ let $btn = $('#myBtn');
 
 // 讓button 帶click事件，點擊時彈出'Hello World'
 $btn.click(function(evt) {
-    alert('Hello world')
+    alert('Dev Server')
 });
