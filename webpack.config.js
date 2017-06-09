@@ -22,6 +22,12 @@ module.exports = {
       name: 'vendor',
       filename: 'common.js'
     })
-  ]
-
+  ],
+  // css loader and style-loader
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    }]
+  }
 }
