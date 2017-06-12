@@ -1,5 +1,6 @@
 const path = require('path')    // nodejs core module
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   devServer: {
@@ -21,13 +22,18 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'common.js'
-    })
+    }),
+    new ExtractTextPlugin('style.css'),
   ],
   // css loader and style-loader
   module: {
     rules: [{
       test: /\.css$/,
-      use: ['style-loader', 'css-loader']
+      // use: ['style-loader', 'css-loader']
+      use: ExtractTextPlugin.extract({
+        use: 'css-loader',
+
+      })
     }]
   }
 }

@@ -4,6 +4,7 @@ import $ from 'jquery';
 // 加入 css 檔
 import './index.css';
 
+
 function componet() {
 	var element = document.createElement('div');
   element.innerHTML = '<h2>Hello World</h2>'
